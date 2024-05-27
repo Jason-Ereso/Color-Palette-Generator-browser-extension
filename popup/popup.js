@@ -13,21 +13,7 @@ document.getElementById('generatePaletteRGB').addEventListener('click', () => {
     generatePaletteFromRGB(rgb);
 });
 
-// function displayPalette(data) {
-//     const paletteDiv = document.getElementById('palette');
-//     paletteDiv.innerHTML = '';
-
-//     const colorTypes = ['original', 'complementary', 'analogous', 'triadic', 'tetradic', 'monochromatic'];
-//     colorTypes.forEach(type => {
-//         const colors = Array.isArray(data[type][0]) ? data[type] : [data[type]];
-//         colors.forEach(color => {
-//             const colorSwatch = document.createElement('div');
-//             colorSwatch.className = 'color-swatch';
-//             colorSwatch.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
-//             paletteDiv.appendChild(colorSwatch);
-//         });
-//     });
-// }
+document.getElementById('generateRandomPalette').addEventListener('click', generateRandomPalette);
 
 function displayPalette(data) {
     const paletteDiv = document.getElementById('palette');
@@ -51,16 +37,6 @@ function displayPalette(data) {
 function rgbToHex(r, g, b) {
     return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 }
-
-// Function to copy text to clipboard
-// function copyToClipboard(text) {
-//     const textarea = document.createElement('textarea');
-//     textarea.value = text;
-//     document.body.appendChild(textarea);
-//     textarea.select();
-//     document.execCommand('copy');
-//     document.body.removeChild(textarea);
-// }
 
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text)
@@ -141,6 +117,18 @@ async function generatePaletteFromRGBValues(rgb) {
     } catch (error) {
         console.error('Error generating palette:', error);
     }
+}
+
+async function generateRandomPalette() {
+    const randomColor = getRandomColor();
+    generatePaletteFromRGBValues(randomColor);
+}
+
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return [r, g, b];
 }
 
 function hexToRgb(hex) {

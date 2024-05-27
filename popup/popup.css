@@ -20,7 +20,7 @@ body {
 .container {
     position: relative; /* Ensure .container is the positioning context */
     width: 600px;
-    height: 1000px;
+    height: 1150px;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
@@ -138,9 +138,10 @@ input[type="text"] {
 
 .bn632-hover.bn24 {
     background-image: linear-gradient(to right,
-            #6253e1,
-            #852d91,
-            #a3a1ff,
-            #f24645);
+            #30b8d4,
+            #d44c30,
+            #3066d4,
+            #30d49e,
+            #ffdf4b);
     box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
 }
