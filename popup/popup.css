@@ -1,0 +1,146 @@
+@keyframes changeBackground {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 100%;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    animation: changeBackground 1s ease;
+    background-size: 100% 200%;
+}
+
+.container {
+    position: relative; /* Ensure .container is the positioning context */
+    width: 600px;
+    height: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.github-link {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+}
+
+.github-icon {
+    width: 32px; /* Adjust the size as needed */
+    height: 32px; /* Adjust the size as needed */
+    transition: transform 0.3s ease;
+}
+
+.github-icon:hover {
+    transform: scale(1.4);
+}
+
+
+h1 {
+    margin-bottom: 20px;
+    color: #00132C;
+    font-family: "Avenir Next LT W01 Bold", sans-serif;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #00132C;
+    font-family: "Avenir Next LT W01 Bold", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+#palette {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px; /* Add padding for spacing */
+    border: 1px #2d2d2d;
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    backdrop-filter: blur(10px); /* Apply a blur effect */
+    background-color: rgba(219, 219, 219, 0.5); /* Add a semi-transparent white background */
+    box-shadow: 0 4px 8px rgba(12, 3, 3, 0.1); /* Add a subtle box shadow */
+}
+
+.color-swatch {
+    width: 80px; /* Increase the width */
+    height: 80px; /* Increase the height */
+    margin: 5px;
+    border-radius: 8px; /* Make the border-radius bigger for rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Set text color to white for better contrast */
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease; /* Add transition for smooth animation */
+}
+
+.color-swatch:hover {
+    transform: scale(1.4); /* Enlarge the color swatch on hover */
+}
+
+#count {
+    font-family: "Avenir Next LT W01 Bold", sans-serif;
+    color: #2c2b00;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+.bn632-hover {
+    /* width: 160px; */
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 5px;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.bn632-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.bn632-hover:focus {
+    outline: none;
+}
+
+.bn632-hover.bn24 {
+    background-image: linear-gradient(to right,
+            #6253e1,
+            #852d91,
+            #a3a1ff,
+            #f24645);
+    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+}
