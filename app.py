@@ -98,41 +98,32 @@ def generate_palette_from_rgb(rgb):
 def index():
     return render_template('index.html')
 
-# Use this route for Webapp alone
-# @app.route('/predict', methods=['POST'])
-# def predict_color():
-#     name = request.form['name']
-#     colors = predict(name)
-#     return jsonify(colors)
-
-# Use this route for the web browser extension
 @app.route('/predict', methods=['POST'])
 def predict_color():
     try:
-        data = request.get_json()
-        name = data['name']
+        if request.is_json:
+            data = request.get_json()
+            name = data['name']
+        else:
+            data = request.form
+            name = data['name']
+        
         colors = predict(name)
         return jsonify(colors)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-# Use this route for Webapp alone
-# @app.route('/color_palette', methods=['POST'])
-# def color_palette():
-#     color_value = request.form['color_value']
-#     if color_value.startswith('#'):
-#         rgb = rgb_from_hex(color_value)
-#     else:
-#         rgb = tuple(map(int, color_value.split(',')))
-#     colors = generate_palette_from_rgb(rgb)
-#     return jsonify(colors)
 
-# Use this route for the web browser extension
 @app.route('/color_palette', methods=['POST'])
 def color_palette():
     try:
-        data = request.get_json()
-        color_value = data['color_value']
+        if request.is_json:
+            data = request.get_json()
+            color_value = data['color_value']
+        else:
+            data = request.form
+            color_value = data['color_value']
+            
         if color_value.startswith('#'):
             rgb = rgb_from_hex(color_value)
         else:
